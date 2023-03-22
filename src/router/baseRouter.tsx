@@ -1,4 +1,4 @@
-import LoginView from '../view/LoginView'
+import LoginView from '../view/login/LoginView'
 import AdminView from '../view/admin/AdminView'
 const baseRouter = [
   { path: '/', element: <LoginView /> },

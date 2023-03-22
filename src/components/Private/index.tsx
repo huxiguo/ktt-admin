@@ -11,11 +11,6 @@ function Private(props: propsInt) {
   } else {
     return <Navigate to={'/?redirect=' + location.pathname}></Navigate>
   }
-  return (
-    <div>
-      <h1>111</h1>
-    </div>
-  )
 }
 
 export default Private

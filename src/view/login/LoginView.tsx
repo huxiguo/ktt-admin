@@ -1,5 +1,7 @@
 import React from 'react'
-import { Button, Checkbox, Form, Input } from 'antd'
+import { useSelector, useDispatch } from 'react-redux'
+import { Button, Form, Input } from 'antd'
+import { userLoginAsync } from './store/LoginViewSlice'
 import './index.css'
 // 验证成功
 const onFinish = (values: any) => {
@@ -10,6 +12,11 @@ const onFinishFailed = (errorInfo: any) => {
   console.log('Failed:', errorInfo)
 }
 const LoginView: React.FC = () => {
+  const dispatch = useDispatch()
+  const handBtn = () => {
+    console.log('111', 111)
+    dispatch(userLoginAsync({ username: 'aaa', password: '123' }) as any)
+  }
   return (
     <div className="loginBox">
       <h2>
@@ -38,7 +45,7 @@ const LoginView: React.FC = () => {
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" block htmlType="submit">
+          <Button type="primary" block htmlType="submit" onClick={handBtn}>
             登录
           </Button>
         </Form.Item>
